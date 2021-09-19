@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+<style>
+  body{
+    background-image: url(./657194.jpg);
+    background-size: Cover ;
+    background-repeat: no-repeat;
+  }
+</style>
+<script>
+  alert("請在視窗內輸入: saber");
+
+  const pressed = [];
+  const secretCode = 'saber'
+
+  window.addEventListener('keyup',(e)=>{
+    console.log(e.key);
+    pressed.push(e.key);
+    pressed.splice(-secretCode.length - 1,pressed.length - secretCode.length);
+
+    if(pressed.join('').includes(secretCode)){
+      console.log('DING DING!');
+      cornify_add();
+    }
+
+    console.log(pressed);
+  });
+</script>
+</body>
+</html>
